@@ -105,6 +105,19 @@
       color: var(--text-primary);
     }
 
+    ul {
+      margin: 12px 0 16px 0;
+      padding-left: 20px;
+    }
+
+    ul li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      margin-bottom: 8px;
+      padding-left: 8px;
+    }
+
     /* Highlight box */
     .callout {
       background: var(--surface);
@@ -167,36 +180,41 @@
     <header>
       <p class="app-label">Lume Light Meter</p>
       <h1>Privacy Policy</h1>
-      <p class="meta">Effective date: April 9, 2026 &nbsp;·&nbsp; Last updated: April 9, 2026</p>
+      <p class="meta">Effective date: April 9, 2026 &nbsp;·&nbsp; Last updated: April 12, 2026</p>
     </header>
 
     <section>
       <h2>The short version</h2>
       <div class="callout">
-        <p>Lume does not collect, store, or transmit any personal data. Everything stays on your device. That's it.</p>
+        <p>Lume does not collect personal data. Camera data never leaves your device. The only third-party service used is RevenueCat, which processes anonymous purchase information to manage your subscription.</p>
       </div>
       <p>This policy describes how Lume Light Meter ("Lume", "the app", "we") handles information when you use the app. We've written it to be as clear and direct as possible.</p>
     </section>
 
     <section>
       <h2>Information we collect</h2>
-      <p><strong>None.</strong> Lume does not collect any personal information, usage data, or analytics of any kind. The app operates entirely on your device. No accounts, no sign-in, no data sent to any server.</p>
+      <p><strong>None directly.</strong> Lume does not collect any personal information, usage data, or analytics of any kind. The app operates entirely on your device. No accounts, no sign-in, no data sent to our servers.</p>
       <p>Camera access is used solely to measure ambient light in real time. No images or video are ever stored, transmitted, or processed outside of your device.</p>
+      <p>All settings and preferences (metering mode, ISO range, film presets, appearance, etc.) are stored locally on your device using iOS standard storage. None of this data is transmitted anywhere.</p>
     </section>
 
     <section>
       <h2>Third-party services</h2>
-      <p>Lume does not integrate any third-party analytics, advertising, or tracking SDKs. No data is shared with any third party.</p>
-    </section>
-
-    <section>
-      <h2>Future changes</h2>
-      <p>We may introduce optional, anonymous analytics in a future update to help us understand how the app is used and improve it. If and when we do, it will be clearly disclosed in an updated version of this policy, and you will have the choice to opt in or out. We will never collect personally identifiable information.</p>
+      <p>Lume uses <strong>RevenueCat</strong> to manage in-app subscriptions. RevenueCat processes a limited set of non-personal data in order to verify and manage your subscription status:</p>
+      <ul>
+        <li>An anonymous randomly-generated identifier (not linked to your name, email, or Apple ID)</li>
+        <li>Subscription and purchase status</li>
+        <li>App version, device type, and operating system version</li>
+        <li>Country code (for regional pricing)</li>
+      </ul>
+      <p>RevenueCat does not receive your name, email address, camera data, photos, or location. Actual payment processing is handled entirely by Apple — Lume and RevenueCat never see your payment details.</p>
+      <p>For more information, see <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a>.</p>
+      <p>No advertising, analytics, or tracking SDKs are used.</p>
     </section>
 
     <section>
       <h2>Children's privacy</h2>
-      <p>Lume does not knowingly collect any information from children under 13. Since no data is collected at all, this is satisfied by default.</p>
+      <p>Lume does not knowingly collect any personal information from children under 13. The only third-party data processing (RevenueCat) involves anonymous purchase identifiers with no personal information attached.</p>
     </section>
 
     <section>
@@ -208,3 +226,12 @@
       <h2>Contact</h2>
       <p>Questions about this policy? Reach us at <a href="mailto:devtheicetea@gmail.com">devtheicetea@gmail.com</a>.</p>
     </section>
+
+    <footer>
+      <span>© 2026 Lume Light Meter</span>
+      <a href="terms.html">Terms of Use</a>
+    </footer>
+
+  </div>
+</body>
+</html>
