@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — LuMe - Light Meter</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f4f1;
+      --surface: #edecea;
+      --border: #d8d6d1;
+      --text-primary: #1a1917;
+      --text-secondary: #6b6860;
+      --text-tertiary: #9b9890;
+      --accent: #1a1917;
+      --mono: 'DM Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 24px;
+    }
+
+    .page-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 80px 0 120px;
+    }
+
+    header {
+      margin-bottom: 64px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .app-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: var(--sans);
+      font-size: clamp(28px, 5vw, 38px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+    }
+
+    section { margin-bottom: 48px; }
+
+    p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    strong {
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--border);
+      transition: text-decoration-color 0.15s;
+    }
+
+    a:hover { text-decoration-color: var(--text-primary); }
+
+    .email {
+      font-family: var(--mono);
+      font-size: 18px;
+      color: var(--text-primary);
+      text-decoration-color: var(--text-tertiary);
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer span {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.08em;
+    }
+
+    footer a {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.08em;
+      text-decoration-color: var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+
+    <header>
+      <p class="app-label">LuMe - Light Meter</p>
+      <h1>Support</h1>
+    </header>
+
+    <section>
+      <p>Need help with LuMe? Have a question, a bug report, or feature feedback? We'd love to hear from you.</p>
+      <p>Email us at <a class="email" href="mailto:contact@contraststudio.app">contact@contraststudio.app</a> and we'll get back to you as soon as we can.</p>
+    </section>
+
+    <footer>
+      <span>© 2026 Contrast Studio LLC</span>
+      <span>
+        <a href="privacy.html">Privacy Policy</a>
+        &nbsp;·&nbsp;
+        <a href="terms.html">Terms of Use</a>
+      </span>
+    </footer>
+
+  </div>
+</body>
+</html>
