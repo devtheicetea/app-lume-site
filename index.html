@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Light Meter LuMe — Precision Light Meter App for iPhone</title>
+  <meta name="description" content="LuMe is a precision light meter app for iPhone. Built for film and digital photographers — spot, center-weighted, and matrix metering, reciprocity correction, depth-of-field calculator, and more." />
+  <link rel="canonical" href="https://lume.contraststudio.app/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Light Meter LuMe — Precision Light Meter App for iPhone" />
+  <meta property="og:description" content="A precision light meter app for film and digital photographers. Spot, center-weighted, and matrix metering, reciprocity correction, depth-of-field calculator, and more." />
+  <meta property="og:url" content="https://lume.contraststudio.app/" />
+  <meta property="og:site_name" content="LuMe" />
+  <meta property="og:image" content="https://lume.contraststudio.app/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Light Meter LuMe — Precision Light Meter App for iPhone" />
+  <meta name="twitter:description" content="A precision light meter app for film and digital photographers." />
+  <meta name="twitter:image" content="https://lume.contraststudio.app/og.png" />
+
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="icon" href="/favicon.ico" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Light Meter LuMe",
+    "alternateName": "LuMe",
+    "operatingSystem": "iOS 16.0",
+    "applicationCategory": "PhotographyApplication",
+    "description": "A precision light meter app for iPhone. Spot, center-weighted, and matrix metering, reciprocity correction for film, depth-of-field and flash calculators, multiple aspect ratios for medium and large format.",
+    "url": "https://lume.contraststudio.app/",
+    "downloadUrl": "https://apps.apple.com/app/id6772063294",
+    "installUrl": "https://apps.apple.com/app/id6772063294",
+    "image": "https://lume.contraststudio.app/og.png",
+    "author": {
+      "@type": "Organization",
+      "name": "Contrast Studio LLC",
+      "url": "https://lume.contraststudio.app/"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD",
+      "category": "Free with in-app purchases"
+    }
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f4f1;
+      --surface: #edecea;
+      --border: #d8d6d1;
+      --text-primary: #1a1917;
+      --text-secondary: #6b6860;
+      --text-tertiary: #9b9890;
+      --accent: #1a1917;
+      --mono: 'DM Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 24px;
+    }
+
+    .page-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 80px 0 120px;
+    }
+
+    header {
+      margin-bottom: 56px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .app-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: var(--sans);
+      font-size: clamp(32px, 6vw, 44px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      color: var(--text-secondary);
+      font-weight: 300;
+      max-width: 520px;
+    }
+
+    section { margin-bottom: 48px; }
+
+    h2 {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    strong {
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--border);
+      transition: text-decoration-color 0.15s;
+    }
+
+    a:hover { text-decoration-color: var(--text-primary); }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .feature-list li {
+      font-size: 16px;
+      color: var(--text-secondary);
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 16px;
+      align-items: baseline;
+    }
+
+    .feature-list li:last-child { border-bottom: none; }
+
+    .feature-list .feat-name {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-primary);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      min-width: 140px;
+      flex-shrink: 0;
+    }
+
+    .feature-list .feat-desc { flex: 1; font-weight: 300; }
+
+    .cta-row {
+      margin: 40px 0;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--text-primary);
+      color: var(--bg);
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 15px;
+      letter-spacing: 0.01em;
+      transition: opacity 0.15s;
+    }
+
+    .cta-primary:hover { opacity: 0.85; text-decoration: none; }
+
+    .cta-meta {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.05em;
+    }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer span, footer a {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.08em;
+    }
+
+    footer a { text-decoration-color: var(--border); }
+  </style>
+</head>
+<body>
+  <main class="page-wrap">
+
+    <header>
+      <p class="app-label">Light Meter LuMe</p>
+      <h1>A precision light meter for film and digital photographers.</h1>
+      <p class="tagline">LuMe turns your iPhone into a reliable handheld light meter — with spot, center-weighted, and matrix metering, film reciprocity correction, and tools made for medium and large format work.</p>
+    </header>
+
+    <section>
+      <h2>What it does</h2>
+      <p>LuMe reads light through your iPhone camera and recommends a correct exposure in real time. Pick a metering pattern, dial in any one of aperture, shutter, or ISO, and LuMe solves for the rest.</p>
+      <p>Designed for photographers who shoot film and want a serious light meter without carrying a separate device — and for digital shooters who want quick, reliable readings for off-camera work.</p>
+
+      <div class="cta-row">
+        <a class="cta-primary" href="https://apps.apple.com/app/id6772063294">Download on the App Store</a>
+        <span class="cta-meta">iPhone · iOS 16.0+ · Free with Pro</span>
+      </div>
+    </section>
+
+    <section>
+      <h2>Features</h2>
+      <ul class="feature-list">
+        <li><span class="feat-name">Metering</span><span class="feat-desc">Spot, center-weighted, and matrix patterns. Multi-point spot averaging with on-tap distance via LiDAR.</span></li>
+        <li><span class="feat-name">Exposure</span><span class="feat-desc">Lock any of aperture, shutter, or ISO and LuMe solves the rest. EV compensation dial with 1/3-stop snapping.</span></li>
+        <li><span class="feat-name">Film</span><span class="feat-desc">Reciprocity correction with Schwarzschild exponents for common film stocks.</span></li>
+        <li><span class="feat-name">Formats</span><span class="feat-desc">35mm full-frame, APS-C, half-frame, 110, medium format (6×4.5, 6×6, 6×7, 6×12, 6×17), Xpan, large format (4×5, 5×7).</span></li>
+        <li><span class="feat-name">Profiles</span><span class="feat-desc">Save camera profiles — format, focal length, fixed aperture — and the viewfinder matches your camera's point of view.</span></li>
+        <li><span class="feat-name">Calculators</span><span class="feat-desc">Depth-of-field calculator (hyperfocal, near/far limits) and guide-number flash calculator.</span></li>
+        <li><span class="feat-name">Viewfinder</span><span class="feat-desc">Histogram, clipping warning, ND filter compensation, aspect-ratio crop, grid overlay.</span></li>
+        <li><span class="feat-name">Languages</span><span class="feat-desc">English, German, Spanish, French, Italian, Japanese, Korean, Dutch, Polish, Portuguese, Russian, Swedish, Turkish, Arabic, and both Chinese variants.</span></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Who it's for</h2>
+      <p>If you shoot Tri-X on a Hasselblad, Portra on a Mamiya 7, or Velvia on a 4×5 — LuMe is built for you. If you shoot digital and need a fast meter for off-camera flash or video work, it works for that too.</p>
+    </section>
+
+    <footer>
+      <span>© 2026 Contrast Studio LLC</span>
+      <span>
+        <a href="support.html">Support</a>
+        &nbsp;·&nbsp;
+        <a href="privacy.html">Privacy</a>
+        &nbsp;·&nbsp;
+        <a href="terms.html">Terms</a>
+      </span>
+    </footer>
+
+  </main>
+</body>
+</html>
