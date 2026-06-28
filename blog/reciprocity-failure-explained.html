@@ -234,6 +234,29 @@
 
     .callout p + p { margin-top: 12px; }
 
+    figure {
+      margin: 32px -20px;
+    }
+
+    figure img, figure svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+    }
+
+    figcaption {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      color: var(--text-tertiary);
+      margin-top: 12px;
+      padding: 0 4px;
+      line-height: 1.6;
+    }
+
     .cta-card {
       margin: 56px 0 24px;
       padding: 32px;
@@ -357,7 +380,12 @@
 
       <p class="formula">t = 60<sup>1.25</sup> ≈ 167 seconds (≈ 2 min 47 s)</p>
 
-      <p>The required correction grows faster than the metered time. A small change in <code>p</code> makes a big difference at long exposures.</p>
+      <p>The required correction grows faster than the metered time. A small change in <code>p</code> makes a big difference at long exposures. The chart below shows the four reciprocity curves side by side: a perfect-reciprocity reference, then three real films from mild (T-Max 400) to severe (Fomapan 100).</p>
+
+      <figure>
+        <img src="/blog/images/reciprocity-curves.svg" alt="Chart: corrected exposure time versus metered exposure time, showing reference, T-Max 400, Tri-X 400, and Fomapan 100 curves diverging from the reference line as metered time grows." width="680" height="440" />
+        <figcaption>Corrected exposure time vs. metered exposure time. The diagonal dashed line is a film with no reciprocity failure. The further a curve bends above it, the more compensation that film needs.</figcaption>
+      </figure>
 
       <h2>Schwarzschild exponents for common films</h2>
 
@@ -382,6 +410,13 @@
       </table>
 
       <p>The standout in this list is Fomapan 100 at <code>p = 0.70</code> — it suffers reciprocity failure faster than almost any other readily available stock. A metered 30-second exposure on Fomapan needs roughly <code>30<sup>1/0.70</sup> ≈ 102 seconds</code> to come out right. T-grain films like the T-Max and Delta lines do dramatically better.</p>
+
+      <p>If you prefer to think in stops rather than seconds — which most photographers do — here's the same data translated into the extra stops of compensation needed at each metered exposure time:</p>
+
+      <figure>
+        <img src="/blog/images/reciprocity-stops.svg" alt="Chart: extra stops of compensation needed versus metered exposure time, for T-Max 400, Tri-X 400, and Fomapan 100." width="680" height="380" />
+        <figcaption>Extra stops needed vs. metered seconds. At a 30-second metered exposure, Fomapan asks for nearly two extra stops; T-Max barely half a stop.</figcaption>
+      </figure>
 
       <div class="callout">
         <p><strong>Note on color shifts.</strong> Color films can also suffer differential reciprocity failure — the red, green, and blue dye layers fail at different rates. A long exposure on Velvia at dusk may come out magenta. Use the recommended CC (color correction) filters on the datasheet for critical work.</p>
