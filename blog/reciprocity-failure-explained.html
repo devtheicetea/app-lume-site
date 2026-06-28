@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reciprocity Failure Explained — When Your Film Needs More Light Than the Meter Says</title>
+  <meta name="description" content="Reciprocity failure is why your long-exposure film shots come out dark. Here's what causes it, how to correct it, and the Schwarzschild exponents for common film stocks." />
+  <link rel="canonical" href="https://lume.contraststudio.app/blog/reciprocity-failure-explained.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Reciprocity Failure Explained" />
+  <meta property="og:description" content="Why long-exposure film shots come out dark, and how to correct for it." />
+  <meta property="og:url" content="https://lume.contraststudio.app/blog/reciprocity-failure-explained.html" />
+  <meta property="og:site_name" content="LuMe" />
+  <meta property="og:image" content="https://lume.contraststudio.app/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Reciprocity Failure Explained" />
+  <meta name="twitter:description" content="Why long-exposure film shots come out dark, and how to correct for it." />
+  <meta name="twitter:image" content="https://lume.contraststudio.app/og.png" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Reciprocity Failure Explained — When Your Film Needs More Light Than the Meter Says",
+    "description": "Reciprocity failure is why your long-exposure film shots come out dark. Here's what causes it, how to correct it, and the Schwarzschild exponents for common film stocks.",
+    "image": "https://lume.contraststudio.app/og.png",
+    "datePublished": "2026-06-28",
+    "author": {
+      "@type": "Organization",
+      "name": "Contrast Studio LLC",
+      "url": "https://lume.contraststudio.app/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Contrast Studio LLC",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://lume.contraststudio.app/icon-192.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://lume.contraststudio.app/blog/reciprocity-failure-explained.html"
+    }
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f4f1;
+      --surface: #edecea;
+      --border: #d8d6d1;
+      --text-primary: #1a1917;
+      --text-secondary: #6b6860;
+      --text-tertiary: #9b9890;
+      --accent: #1a1917;
+      --mono: 'DM Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 24px;
+    }
+
+    .page-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 64px 0 120px;
+    }
+
+    .top-nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 56px;
+    }
+
+    .top-nav img {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+    }
+
+    .top-nav a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .top-nav a:hover { color: var(--text-primary); }
+
+    article header {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .kicker {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 4.5vw, 38px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    .meta {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.05em;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-top: 48px;
+      margin-bottom: 18px;
+    }
+
+    p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+      font-weight: 300;
+    }
+
+    strong {
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--border);
+      transition: text-decoration-color 0.15s;
+    }
+
+    a:hover { text-decoration-color: var(--text-primary); }
+
+    code, .formula {
+      font-family: var(--mono);
+      font-size: 15px;
+      color: var(--text-primary);
+      background: var(--surface);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    .formula {
+      display: block;
+      padding: 16px 20px;
+      margin: 20px 0;
+      text-align: center;
+      font-size: 16px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-family: var(--sans);
+      font-size: 15px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 8px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    th {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      font-weight: 400;
+    }
+
+    td.mono {
+      font-family: var(--mono);
+      color: var(--text-primary);
+    }
+
+    .callout {
+      background: var(--surface);
+      padding: 24px 28px;
+      border-radius: 8px;
+      margin: 32px 0;
+    }
+
+    .callout p {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+
+    .callout p + p { margin-top: 12px; }
+
+    .cta-card {
+      margin: 56px 0 24px;
+      padding: 32px;
+      background: var(--surface);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .cta-card img {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+    }
+
+    .cta-card-text {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .cta-card-text strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .cta-card-text span {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--text-primary);
+      color: var(--bg);
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+      transition: opacity 0.15s;
+    }
+
+    .cta-primary:hover { opacity: 0.85; text-decoration: none; }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer span, footer a {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.08em;
+    }
+
+    footer a { text-decoration-color: var(--border); }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+
+    <nav class="top-nav">
+      <a href="/"><img src="/icon-192.png" alt="LuMe" /></a>
+      <a href="/">Light Meter LuMe</a>
+      <span style="color: var(--border)">·</span>
+      <span>Journal</span>
+    </nav>
+
+    <article>
+      <header>
+        <p class="kicker">Film Photography</p>
+        <h1>Reciprocity failure explained — when your film needs more light than the meter says.</h1>
+        <p class="meta">June 28, 2026 · 6 min read</p>
+      </header>
+
+      <p>You set up your tripod at dusk, meter the scene carefully, and read a four-second exposure. You expose for four seconds. The negative comes back thin and underexposed. Your meter wasn't wrong — your film cheated on you.</p>
+
+      <p>This is <strong>reciprocity failure</strong>, and every film photographer who shoots in low light eventually meets it. It's also one of the cleanest examples of why a digital sensor and a sheet of film are not interchangeable measuring tools.</p>
+
+      <h2>What reciprocity is, and why it "fails"</h2>
+
+      <p>The reciprocity law says that exposure is the product of intensity and time. A bright scene for a short time produces the same density as a dim scene for a long time. Photometric reciprocity holds across most everyday shutter speeds — that's why your meter works.</p>
+
+      <p>Film breaks this rule at the edges. When light is very weak (long exposures) or very strong (very brief exposures), the silver halide grains stop responding linearly. The chemistry of latent image formation needs more than one photon to land on the same grain within a short window. At low intensities, photons arrive too sparsely. Some grains pick up one photon and lose it before the next arrives — no latent image, no developed silver. You need disproportionately more time to get the same density on the negative.</p>
+
+      <p>This is called <strong>low-intensity reciprocity failure</strong>, or LIRF. It's the version that bites you when shooting long exposures.</p>
+
+      <h2>When it starts to matter</h2>
+
+      <p>For most modern film stocks, reciprocity failure becomes visible above roughly one second of exposure. Below that, you can trust your meter. Past it, the correction grows nonlinearly — a metered 2-second exposure might need 3 seconds. A metered 30-second exposure might need 2 full minutes.</p>
+
+      <p>Digital sensors don't suffer from this. CCDs and CMOS chips count photons linearly across many decades of exposure time, only running into noise and dark-current issues at the long end. This is part of why a light meter built into a digital camera reads "correctly" for digital but can mislead you for film.</p>
+
+      <h2>The Schwarzschild formula</h2>
+
+      <p>The classical correction is named for Karl Schwarzschild, the same astronomer who solved Einstein's field equations for a non-rotating black hole. He noticed the reciprocity breakdown while doing stellar photometry on glass plates. His correction is a simple power law:</p>
+
+      <p class="formula">t<sub>corrected</sub> = t<sub>metered</sub><sup>1 / p</sup></p>
+
+      <p>where <code>p</code> is the Schwarzschild exponent of the film, a number between roughly 0.6 and 1.0. A film with <code>p = 1</code> obeys reciprocity perfectly. The lower the exponent, the worse the failure.</p>
+
+      <p>So if you meter 10 seconds on a film with <code>p = 0.80</code>:</p>
+
+      <p class="formula">t = 10<sup>1 / 0.80</sup> = 10<sup>1.25</sup> ≈ 17.8 seconds</p>
+
+      <p>For a longer metered exposure of 60 seconds on the same film:</p>
+
+      <p class="formula">t = 60<sup>1.25</sup> ≈ 167 seconds (≈ 2 min 47 s)</p>
+
+      <p>The required correction grows faster than the metered time. A small change in <code>p</code> makes a big difference at long exposures.</p>
+
+      <h2>Schwarzschild exponents for common films</h2>
+
+      <p>Manufacturer datasheets give correction tables, but they boil down to roughly these exponents:</p>
+
+      <table>
+        <thead>
+          <tr><th>Film</th><th>Type</th><th>Exponent (p)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Kodak Tri-X 400</td><td>B&amp;W neg</td><td class="mono">0.82</td></tr>
+          <tr><td>Kodak T-Max 400</td><td>B&amp;W neg</td><td class="mono">0.92</td></tr>
+          <tr><td>Kodak T-Max 100</td><td>B&amp;W neg</td><td class="mono">0.93</td></tr>
+          <tr><td>Ilford HP5+ 400</td><td>B&amp;W neg</td><td class="mono">0.79</td></tr>
+          <tr><td>Ilford Delta 100</td><td>B&amp;W neg</td><td class="mono">0.85</td></tr>
+          <tr><td>Ilford Delta 3200</td><td>B&amp;W neg</td><td class="mono">0.78</td></tr>
+          <tr><td>Fomapan 100</td><td>B&amp;W neg</td><td class="mono">0.70</td></tr>
+          <tr><td>Kodak Portra 400</td><td>Color neg</td><td class="mono">0.95</td></tr>
+          <tr><td>Kodak Ektar 100</td><td>Color neg</td><td class="mono">0.92</td></tr>
+          <tr><td>Fujifilm Velvia 50</td><td>Color slide</td><td class="mono">0.85</td></tr>
+        </tbody>
+      </table>
+
+      <p>The standout in this list is Fomapan 100 at <code>p = 0.70</code> — it suffers reciprocity failure faster than almost any other readily available stock. A metered 30-second exposure on Fomapan needs roughly <code>30<sup>1/0.70</sup> ≈ 102 seconds</code> to come out right. T-grain films like the T-Max and Delta lines do dramatically better.</p>
+
+      <div class="callout">
+        <p><strong>Note on color shifts.</strong> Color films can also suffer differential reciprocity failure — the red, green, and blue dye layers fail at different rates. A long exposure on Velvia at dusk may come out magenta. Use the recommended CC (color correction) filters on the datasheet for critical work.</p>
+      </div>
+
+      <h2>How to handle it in the field</h2>
+
+      <p>Three options, in order of effort:</p>
+
+      <p><strong>1. Memorize a rough rule.</strong> For most B&amp;W stocks, double a metered 1-second exposure, triple a metered 10-second, and roughly 4× a metered 30-second. This is wrong for any specific film, but it'll get you in the negative's exposure range.</p>
+
+      <p><strong>2. Carry the datasheet.</strong> Manufacturers publish exposure correction tables. They're definitive, but you need to look them up in the field.</p>
+
+      <p><strong>3. Use a meter that does the math.</strong> A modern light meter app can apply the Schwarzschild correction to its reading automatically, given the film's exponent. This is what we built into <a href="/">LuMe</a> — you pick the film, and any metered shutter speed above one second is corrected before you see it.</p>
+
+      <div class="cta-card">
+        <img src="/icon-192.png" alt="LuMe icon" />
+        <div class="cta-card-text">
+          <strong>LuMe handles this for you.</strong>
+          <span>Built-in reciprocity correction with Schwarzschild exponents for common film stocks, plus a manual exponent for custom emulsions.</span>
+        </div>
+        <a class="cta-primary" href="https://apps.apple.com/app/id6772063294">Download on the App Store</a>
+      </div>
+
+      <h2>The takeaway</h2>
+
+      <p>Reciprocity failure is one of the few places where film genuinely behaves like an analog medium with all the messy nonlinearity that implies. Your digital meter is telling the truth about the light; your film just needs a translation. Once you build the correction into your workflow — by app, by rule of thumb, or by datasheet — the failure becomes predictable, and your night and dawn negatives stop coming back disappointingly thin.</p>
+
+    </article>
+
+    <footer>
+      <span>© 2026 Contrast Studio LLC</span>
+      <span>
+        <a href="/">Home</a>
+        &nbsp;·&nbsp;
+        <a href="/support.html">Support</a>
+        &nbsp;·&nbsp;
+        <a href="/privacy.html">Privacy</a>
+        &nbsp;·&nbsp;
+        <a href="/terms.html">Terms</a>
+      </span>
+    </footer>
+
+  </div>
+</body>
+</html>

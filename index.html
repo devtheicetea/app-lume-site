@@ -19,8 +19,9 @@
   <meta name="twitter:description" content="A precision light meter app for film and digital photographers." />
   <meta name="twitter:image" content="https://lume.contraststudio.app/og.png" />
 
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
 
   <script type="application/ld+json">
   {
@@ -87,6 +88,28 @@
       margin-bottom: 56px;
       padding-bottom: 40px;
       border-bottom: 1px solid var(--border);
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .brand-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08), 0 1px 0 rgba(255,255,255,0.4) inset;
+    }
+
+    .brand-name {
+      font-family: var(--sans);
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
     }
 
     .app-label {
@@ -239,7 +262,11 @@
   <main class="page-wrap">
 
     <header>
-      <p class="app-label">Light Meter LuMe</p>
+      <div class="brand-row">
+        <img class="brand-icon" src="/icon-192.png" alt="LuMe app icon" width="64" height="64" />
+        <span class="brand-name">Light Meter LuMe</span>
+      </div>
+      <p class="app-label">Light Meter for iPhone</p>
       <h1>A precision light meter for film and digital photographers.</h1>
       <p class="tagline">LuMe turns your iPhone into a reliable handheld light meter — with spot, center-weighted, and matrix metering, film reciprocity correction, and tools made for medium and large format work.</p>
     </header>
@@ -272,6 +299,16 @@
     <section>
       <h2>Who it's for</h2>
       <p>If you shoot Tri-X on a Hasselblad, Portra on a Mamiya 7, or Velvia on a 4×5 — LuMe is built for you. If you shoot digital and need a fast meter for off-camera flash or video work, it works for that too.</p>
+    </section>
+
+    <section>
+      <h2>Reading</h2>
+      <ul class="feature-list">
+        <li>
+          <span class="feat-name">Jun 2026</span>
+          <span class="feat-desc"><a href="/blog/reciprocity-failure-explained.html">Reciprocity failure explained — when your film needs more light than the meter says</a></span>
+        </li>
+      </ul>
     </section>
 
     <footer>

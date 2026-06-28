@@ -1,0 +1,19 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["AJQ6M64RDP.app.contraststudio.lume"],
+        "components": [
+          {
+            "/": "/",
+            "comment": "Match root landing page"
+          },
+          {
+            "/": "/blog/*",
+            "comment": "Match blog posts"
+          }
+        ]
+      }
+    ]
+  }
+}
