@@ -6,6 +6,11 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://lume.contraststudio.app/blog/sunny-16-rule-explained.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://lume.contraststudio.app/blog/reciprocity-failure-explained.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>

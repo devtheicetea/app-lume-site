@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Sunny 16 Rule Explained — And Where It Breaks</title>
+  <meta name="description" content="Sunny 16 is the one exposure rule that works without a meter. Here's what it says, why it works, the full rule family (Sunny 22, Cloudy 8, Shade 5.6), and the conditions where it lies." />
+  <link rel="canonical" href="https://lume.contraststudio.app/blog/sunny-16-rule-explained.html" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="The Sunny 16 Rule Explained — And Where It Breaks" />
+  <meta property="og:description" content="What Sunny 16 says, why it works, and the conditions where it stops being accurate." />
+  <meta property="og:url" content="https://lume.contraststudio.app/blog/sunny-16-rule-explained.html" />
+  <meta property="og:site_name" content="LuMe" />
+  <meta property="og:image" content="https://lume.contraststudio.app/og.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="The Sunny 16 Rule Explained — And Where It Breaks" />
+  <meta name="twitter:description" content="What Sunny 16 says, why it works, and the conditions where it stops being accurate." />
+  <meta name="twitter:image" content="https://lume.contraststudio.app/og.png" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "The Sunny 16 Rule Explained — And Where It Breaks",
+    "description": "Sunny 16 is the one exposure rule that works without a meter. Here's what it says, why it works, the full rule family, and the conditions where it lies.",
+    "image": "https://lume.contraststudio.app/og.png",
+    "datePublished": "2026-07-01",
+    "author": {
+      "@type": "Organization",
+      "name": "Contrast Studio LLC",
+      "url": "https://lume.contraststudio.app/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Contrast Studio LLC",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://lume.contraststudio.app/icon-192.png"
+      }
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://lume.contraststudio.app/blog/sunny-16-rule-explained.html"
+    }
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f5f4f1;
+      --surface: #edecea;
+      --border: #d8d6d1;
+      --text-primary: #1a1917;
+      --text-secondary: #6b6860;
+      --text-tertiary: #9b9890;
+      --accent: #1a1917;
+      --mono: 'DM Mono', monospace;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      padding: 0 24px;
+    }
+
+    .page-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 64px 0 120px;
+    }
+
+    .top-nav {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 56px;
+    }
+
+    .top-nav img { width: 28px; height: 28px; border-radius: 6px; }
+
+    .top-nav a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .top-nav a:hover { color: var(--text-primary); }
+
+    article header {
+      margin-bottom: 48px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .kicker {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 4.5vw, 38px);
+      font-weight: 300;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+
+    .meta {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.05em;
+    }
+
+    h2 {
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin-top: 48px;
+      margin-bottom: 18px;
+    }
+
+    p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+      font-weight: 300;
+    }
+
+    strong { font-weight: 500; color: var(--text-primary); }
+
+    a {
+      color: var(--text-primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--border);
+      transition: text-decoration-color 0.15s;
+    }
+
+    a:hover { text-decoration-color: var(--text-primary); }
+
+    code {
+      font-family: var(--mono);
+      font-size: 15px;
+      color: var(--text-primary);
+      background: var(--surface);
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-family: var(--sans);
+      font-size: 15px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px 8px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-weight: 300;
+    }
+
+    th {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--text-tertiary);
+      font-weight: 400;
+    }
+
+    td.mono {
+      font-family: var(--mono);
+      color: var(--text-primary);
+    }
+
+    .callout {
+      background: var(--surface);
+      padding: 24px 28px;
+      border-radius: 8px;
+      margin: 32px 0;
+    }
+
+    .callout p { font-size: 16px; margin-bottom: 0; }
+    .callout p + p { margin-top: 12px; }
+
+    figure { margin: 32px -20px; }
+
+    figure img, figure svg {
+      width: 100%;
+      height: auto;
+      display: block;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: var(--surface);
+    }
+
+    figcaption {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.05em;
+      color: var(--text-tertiary);
+      margin-top: 12px;
+      padding: 0 4px;
+      line-height: 1.6;
+    }
+
+    .cta-card {
+      margin: 56px 0 24px;
+      padding: 32px;
+      background: var(--surface);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .cta-card img {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+    }
+
+    .cta-card-text { flex: 1; min-width: 240px; }
+
+    .cta-card-text strong {
+      display: block;
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .cta-card-text span {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .cta-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--text-primary);
+      color: var(--bg);
+      padding: 12px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: var(--sans);
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: 0.01em;
+      transition: opacity 0.15s;
+    }
+
+    .cta-primary:hover { opacity: 0.85; text-decoration: none; }
+
+    footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer span, footer a {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-tertiary);
+      letter-spacing: 0.08em;
+    }
+
+    footer a { text-decoration-color: var(--border); }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+
+    <nav class="top-nav">
+      <a href="/"><img src="/icon-192.png" alt="LuMe" /></a>
+      <a href="/">Light Meter LuMe</a>
+      <span style="color: var(--border)">·</span>
+      <span>Journal</span>
+    </nav>
+
+    <article>
+      <header>
+        <p class="kicker">Exposure Basics</p>
+        <h1>The Sunny 16 rule explained — and where it breaks.</h1>
+        <p class="meta">July 1, 2026 · 6 min read</p>
+      </header>
+
+      <p>There's exactly one exposure rule in photography that works without a meter, a battery, or an app. If you know the film's ISO and pick a shutter speed, you know the aperture. The whole system fits in one sentence.</p>
+
+      <p>That sentence: <strong>on a bright sunny day, at a shutter speed of one over the film's ISO, shoot at f/16.</strong></p>
+
+      <p>ISO 400 film, 1/400s → f/16. ISO 100, 1/125s → f/16. It's called Sunny 16 because the aperture stays at f/16 while the shutter speed matches the ISO.</p>
+
+      <p>Sunny 16 exists because sunlight is remarkably consistent. On a clear day, at a reasonable sun elevation, the illuminance at Earth's surface is essentially the same everywhere on the planet. The Andes and Bali have identical solar illuminance at noon. Once you know that constant, exposure math for that scene becomes deterministic — no equipment required.</p>
+
+      <h2>The full family</h2>
+
+      <p>Sunny 16 is just one member of a family of rules that cover most daytime conditions. Each step below it is one stop of light, opening the aperture as conditions dim:</p>
+
+      <table>
+        <thead>
+          <tr><th>Condition</th><th>Aperture</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Sun on snow or beach sand</td><td class="mono">f/22</td></tr>
+          <tr><td>Bright, direct sun</td><td class="mono">f/16</td></tr>
+          <tr><td>Slight overcast, soft shadows</td><td class="mono">f/11</td></tr>
+          <tr><td>Overcast, no shadows</td><td class="mono">f/8</td></tr>
+          <tr><td>Heavy overcast</td><td class="mono">f/5.6</td></tr>
+          <tr><td>Open shade under blue sky</td><td class="mono">f/5.6</td></tr>
+        </tbody>
+      </table>
+
+      <p>All aperture readings assume the shutter speed is still 1/ISO. If you're shooting HP5+ (ISO 400) on an overcast day, that's 1/400s at f/8. Ilford Delta 100 in slight overcast is 1/125s at f/11. The shutter side of the equation doesn't change — only the aperture moves as the light does.</p>
+
+      <h2>Why it works</h2>
+
+      <p>The rule works because of a chain of physical constants. At noon on a clear day, the sun delivers roughly 100,000 lux of horizontal illuminance to Earth's surface. Photography's standard exposure scale — the exposure value (EV) — pins that condition at EV 15 at ISO 100.</p>
+
+      <p>EV 15 at ISO 100 works out to exactly <code>f/16 at 1/125s</code>, or equivalently <code>f/11 at 1/250s</code>, or <code>f/8 at 1/500s</code>, and so on down any line of equivalent exposures. Sunny 16 is just the "at 1/ISO seconds" slice of that scale, chosen because it's the easiest to memorize.</p>
+
+      <p>The rule assumes:</p>
+      <ul style="color: var(--text-secondary); font-size: 17px; padding-left: 24px; margin-bottom: 18px;">
+        <li style="margin-bottom: 6px;">The sun is high — roughly 40° elevation or more.</li>
+        <li style="margin-bottom: 6px;">A clear sky with no significant haze.</li>
+        <li style="margin-bottom: 6px;">A subject in direct light — not backlit, not in shade.</li>
+        <li>An "average" subject, reflecting roughly 18% of incident light.</li>
+      </ul>
+      <p>When those assumptions hold, Sunny 16 is usually within one third of a stop of what a good meter would tell you. Which is impressive for a rule that requires nothing but a glance at the sky.</p>
+
+      <h2>Where it breaks</h2>
+
+      <p>The biggest failure mode is sun elevation. The rule assumes noon-ish sun. When the sun is lower — early morning, late afternoon, high latitudes in winter — the light traverses more atmosphere and loses meaningful energy along the way. Sunny 16 starts to over-expose:</p>
+
+      <figure>
+        <img src="/blog/images/sunny-16-elevation.svg" alt="Chart showing Sunny 16's flat EV 15 assumption versus the actual EV that drops as the sun elevation decreases from 90° down to 5°." width="680" height="440" />
+        <figcaption>Sunny 16 assumes a flat EV 15 regardless of sun elevation. In reality, EV drops steeply below 30° — by golden hour you're two stops down; at 10° above the horizon, close to three.</figcaption>
+      </figure>
+
+      <p>At sun elevations below about 30°, atmospheric absorption combined with the cosine law knocks you a stop or more below EV 15. At 15° — mid-morning through most of the winter in temperate latitudes — a clear-sky scene meters closer to overcast conditions than to Sunny 16. This is why the rule works for California summer and fails for London January, even under the same "clear sky."</p>
+
+      <p>Other cases where Sunny 16 lies:</p>
+
+      <p><strong>Snow or bright sand.</strong> The rule table says f/22 for these — a stop tighter than Sunny 16 — because reflected light from the ground supplements the direct sun. But that assumes you're metering the whole sunlit scene. If your subject is a person in a dark jacket standing on the snow, the reflected light doesn't help expose them — it just fools any meter reading you might take. You'd expose closer to Sunny 16 for the person, not Sunny 22 for the field.</p>
+
+      <p><strong>Dappled shade.</strong> Uniform shade is easy: f/5.6. But sun filtered through leaves is neither shade nor direct sun, and the average is hard to eyeball. Rules of thumb don't cover it.</p>
+
+      <p><strong>Urban scenes after golden hour.</strong> Once the sun drops below the horizon, streetlights, storefronts, and reflected artificial light take over. None of Sunny 16's assumptions hold. You need a meter or a lot of experience.</p>
+
+      <p><strong>Broken clouds with sun-holes.</strong> "Overcast" means fully diffused light. Broken clouds with the sun visible through gaps behave differently — the scene contrast is high, and the "correct" exposure depends on whether you're metering for the highlights or shadows.</p>
+
+      <p><strong>Slide film.</strong> Not a failure of the rule, but of the film's forgiveness. Negative film has three or more stops of latitude on either side of the correct exposure. Sunny 16 within a third of a stop is fine. Slide film — Velvia, Provia, Ektachrome — has less than a stop of latitude. Sunny 16's third-of-a-stop tolerance eats a lot of that margin, and a low-sun error will straight-up ruin the frame.</p>
+
+      <div class="callout">
+        <p><strong>A useful mental model.</strong> Sunny 16 is a lookup table for one specific scene: high sun, clear sky, average subject. Every real-world variation — lower sun, thicker atmosphere, unusual subject reflectance — is a modification to that lookup. The rule doesn't fail because the physics changes; it fails because you're not shooting the reference scene anymore.</p>
+      </div>
+
+      <h2>How working photographers actually use it</h2>
+
+      <p>The way most film photographers use Sunny 16 isn't <em>instead of</em> a meter. It's as a sanity check.</p>
+
+      <p>You meter the scene. Say the meter gives you f/8 at 1/250s (EV 13). You glance up: bright but hazy, so mental Sunny 16 says hazy sun → f/11. Your meter said f/8, one stop off from the rule. That gap forces the check. Is your meter reading a dark subject and compensating? Are you including too much sky in a matrix reading? Is the ISO set wrong on the camera? The disagreement between the rule and the reading is what makes you catch the mistake.</p>
+
+      <p>The opposite is also useful. If the meter reads f/16 at 1/60s (EV 12) and you look up and see full sunlight, your gut goes "that can't be right — Sunny 16 for ISO 60 would be much brighter." You re-check the settings. Usually it's a stray ND filter left on the lens, or a spot meter on a dark corner. The rule keeps you honest.</p>
+
+      <h2>When to rely on it alone</h2>
+
+      <p>Sunny 16 alone is enough when:</p>
+      <ul style="color: var(--text-secondary); font-size: 17px; padding-left: 24px; margin-bottom: 18px;">
+        <li style="margin-bottom: 6px;">You're shooting color or black-and-white negative film with several stops of latitude.</li>
+        <li style="margin-bottom: 6px;">The conditions are unambiguous — clear noon sun, or fully overcast.</li>
+        <li>You'd rather shoot than fiddle. Sometimes not-quite-perfect exposure is worth more than a missed frame.</li>
+      </ul>
+
+      <p>Not enough when:</p>
+      <ul style="color: var(--text-secondary); font-size: 17px; padding-left: 24px; margin-bottom: 18px;">
+        <li style="margin-bottom: 6px;">You're on slide film. Latitude is too narrow to eat a Sunny 16 approximation error.</li>
+        <li style="margin-bottom: 6px;">Mixed light, long shadows, or urban after-hours scenes. The rule wasn't designed for them.</li>
+        <li>Long exposures where <a href="/blog/reciprocity-failure-explained.html">reciprocity failure</a> compounds any exposure error into a much bigger one on the negative.</li>
+      </ul>
+
+      <div class="cta-card">
+        <img src="/icon-192.png" alt="LuMe icon" />
+        <div class="cta-card-text">
+          <strong>Sunny 16 is the map. A meter is the compass.</strong>
+          <span>LuMe reads EV from your iPhone camera, corrects for reciprocity on long film exposures, and matches the viewfinder to your actual camera's frame — so what the meter reads is what your camera will capture.</span>
+        </div>
+        <a class="cta-primary" href="https://apps.apple.com/app/id6772063294">Download on the App Store</a>
+      </div>
+
+    </article>
+
+    <footer>
+      <span>© 2026 Contrast Studio LLC</span>
+      <span>
+        <a href="/">Home</a>
+        &nbsp;·&nbsp;
+        <a href="/support.html">Support</a>
+        &nbsp;·&nbsp;
+        <a href="/privacy.html">Privacy</a>
+        &nbsp;·&nbsp;
+        <a href="/terms.html">Terms</a>
+      </span>
+    </footer>
+
+  </div>
+</body>
+</html>
